@@ -8,9 +8,9 @@ namespace MAEWebApp.Models.ViewModels
 {
     public class SubjectViewModel
     {
-        public string Name { get; set; }
-        public int TotalClasses { get; set; }
-        public int TotalAbstences { get; set; }
-        public Decimal Percent { get; set; }
+        public string subjectName { get; set; }
+        public int totalClasses { get; set; }
+        public int abstencesCount { get; set; }
+        public Decimal presencePercent { get; set; }
     }
 }

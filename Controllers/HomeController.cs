@@ -2,12 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using MAEWebApp.Models;
 using MAEWebApp.Models.ViewModels;
+using MAEWebApp.Services;
+using MAEWebApp.Services.Interfaces;
 
 namespace MAEWebApp.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    //private SubjectAbstencesService subjectAbstencesService;
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -16,24 +19,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<SubjectViewModel> subjects = new List<SubjectViewModel>();
+        SubjectAbstencesService subjectAbstencesService = new SubjectAbstencesService();
 
-        subjects.Add(new SubjectViewModel
-        { 
-            Name = "Padrões de Projetos", 
-            TotalClasses = 90, 
-            TotalAbstences =  2,
-            Percent = 98.15m
-        });
-        subjects.Add(new SubjectViewModel
-        { 
-            Name = "Padrões de Projetos", 
-            TotalClasses = 90, 
-            TotalAbstences =  2,
-            Percent = 98.15m
-        });
+        HomeModels homeModels = new HomeModels();
+        
+        homeModels.Subjects = subjectAbstencesService.GetAll();
 
-        return View(subjects);
+        return View(homeModels);
     }
 
     public IActionResult Privacy()
