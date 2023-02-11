@@ -61,7 +61,7 @@
     </div>
 </div>
 <div class="row">
-<div class="col-xl-8">
+<div class="col-xl-8 mt-4">
     <div class="card">
         <div class="card-header border-0">
             <div class="row align-items-center">
@@ -107,7 +107,7 @@
         </div>
     </div>
 </div>
-<div class="col-xl-4">
+<div class="col-xl-4 mt-4">
     <div class="card">
         <div class="card-header border-0">
             <div class="row align-items-center">
@@ -124,6 +124,7 @@
             <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                 <tr>
+                    <th scope="col"></th>
                     <th scope="col">Segunda</th>
                     <th scope="col">Terça</th>
                     <th scope="col">Quarta</th>
@@ -133,27 +134,32 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">
-                        
-                    </th>
-                    <td>
-                        
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-                    
-                </tr>
+                        @foreach (ShedulesViewModel subjectShedule in Model.Shedules)
+                        {
+                            <tr>
+                                <th scope="row">
+                                        
+                                </th>
+                                <td>
+                                    @subjectShedule.Monday
+                                </td>
+                                <td>
+                                        @subjectShedule.Tuesday
+                                </td>
+                                <td>
+                                        @subjectShedule.Wednesday
+                                </td>
+                                <td>
+                                        @subjectShedule.Thursday
+                                </td>
+                                <td>
+                                        @subjectShedule.Friday
+                                </td>
+                                <td>
+                                        @subjectShedule.Saturday
+                                </td>
+                            </tr>
+                        } 
                 </tbody>
             </table>
         </div>

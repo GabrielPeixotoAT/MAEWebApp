@@ -20,10 +20,13 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         SubjectAbstencesService subjectAbstencesService = new SubjectAbstencesService();
+        SubjectShedulesService subjectShedulesService = new SubjectShedulesService();
 
         HomeModels homeModels = new HomeModels();
         
-        homeModels.Subjects = subjectAbstencesService.GetAll();
+        homeModels.Subjects = subjectAbstencesService.GetAll() as List<SubjectViewModel>;
+
+        homeModels.Shedules = subjectShedulesService.ToSheduleView();
 
         return View(homeModels);
     }

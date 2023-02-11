@@ -4,13 +4,14 @@ using System.Text.Json.Serialization;
 
 namespace MAEWebApp.MAE_Api
 {
-    public class ApiRequest
+    public class ApiRequest<T>
     {
         public ApiRequest() 
         {
             
         }
-        public static async Task<List<SubjectViewModel>> Get(string url)
+
+        public static async Task<T> Get(string url)
         {
             HttpClient client = new HttpClient();
             //HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
@@ -19,14 +20,14 @@ namespace MAEWebApp.MAE_Api
 
             string data = await response.Content.ReadAsStringAsync();
             
-            List<SubjectViewModel> subjectView = JsonSerializer.Deserialize<List<SubjectViewModel>>(data);
+            T objects = JsonSerializer.Deserialize<T>(data);
 
-            return subjectView;
+            return objects;
         }
 
-        public static async Task Post(string url)
+        public static async Task<T> Post(string url, T obj)
         {
-
+            return await Get(url);
         }
     }
 }

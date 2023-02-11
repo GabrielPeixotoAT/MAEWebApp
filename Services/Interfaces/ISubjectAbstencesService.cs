@@ -2,8 +2,8 @@
 
 namespace MAEWebApp.Services.Interfaces
 {
-    public interface ISubjectAbstencesService
+    public interface ISubjectAbstencesService : IService
     {
-        public List<SubjectViewModel> GetAll();
+
     }
 }
