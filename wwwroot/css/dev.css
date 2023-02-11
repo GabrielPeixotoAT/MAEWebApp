@@ -7,19 +7,34 @@
 }
 
 header {
-    background-color: #001233;
+    background-color: #36205d;
 }
 
 .mycardheader-primary {
-    background-color: #002855;
+    background-color: #24cc8f;
 }
 
 .mycardheader-info {
-    background-color: #023e7d;
+    background-color: #50b5e9;
 }
 
 .mycardheader-secondary {
-    background-color: #0353a4;
+    background-color: #ff944c;
+}
+
+.mycardheader-danger {
+    background-color: #de3f3f;
+}
+
+.myfooter-dark {
+    background-color: #59666c;
+}
+
+a {
+    color: plum;
+}
+a:hover {
+    color: purple;
 }
 
 .second-area {

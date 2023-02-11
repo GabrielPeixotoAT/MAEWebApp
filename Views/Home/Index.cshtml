@@ -6,7 +6,7 @@
 @model HomeModels
 
 <div class="row">
-    <div class="col-xl-8">
+    <div class="col-xl-8 mt-4">
         <div class="card bg-default box-shadow shadow">
             <div class="card-header mycardheader-primary">
                 <div class="row align-items-center">
@@ -41,8 +41,8 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-4">  
-        <div class="card mt-sm-4 mt-lg-0 box-shadow shadow">
+    <div class="col-xl-4 mt-4">  
+        <div class="card box-shadow shadow">
             <div class="card-header mycardheader-secondary">
                 <div class="row align-items-center">
                     <div class="col">
@@ -61,108 +61,163 @@
     </div>
 </div>
 <div class="row">
-<div class="col-xl-7 mt-4">
-    <div class="card box-shadow shadow">
-        <div class="card-header border-0 mycardheader-info">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h3 class="mb-0 text-light">Matérias</h3>
+    <div class="col-xl-7 mt-4">
+        <div class="card box-shadow shadow">
+            <div class="card-header border-0 mycardheader-info">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="mb-0 text-light">Matérias</h3>
+                    </div>
+                    <!--<div class="col text-right">
+                        <a href="#!" class="btn btn-sm btn-primary">Ver todas</a>
+                        </div>-->
                 </div>
-                <!--<div class="col text-right">
-                    <a href="#!" class="btn btn-sm btn-primary">Ver todas</a>
-                    </div>-->
             </div>
-        </div>
-        <div class="table-responsive">
-            <!-- Projects table -->
-            <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Total de Aulas</th>
-                    <th scope="col">Total de Faltas</th>
-                    <th scope="col">Presença</th>
-                </tr>
-                </thead>
-                <tbody>
-                    @foreach (SubjectViewModel subject in Model.Subjects)
-                    {
-                        <tr>
-                            <th scope="row">
-                                
-                            </th>
-                            <td>
-                                @subject.subjectName
-                            </td>
-                            <td>
-                                @subject.totalClasses
-                            </td>
-                            <td>
-                                @subject.abstencesCount
-                            </td>
-                            <td>
-                                <i class="fas fa-arrow-up text-success mr-3"></i> @subject.presencePercent%
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<div class="col-xl-5 mt-4">
-    <div class="card box-shadow shadow">
-        <div class="card-header border-0 mycardheader-secondary">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h3 class="mb-0 text-light">Horários</h3>
-                </div>
-                <!--<div class="col text-right">
-                    <a href="#!" class="btn btn-sm btn-primary">Ver mais</a>
-                    </div>-->
-            </div>
-        </div>
-        <div class="table-responsive">
-            <!-- Projects table -->
-            <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                <tr>
-                    <th scope="col">Segunda</th>
-                    <th scope="col">Terça</th>
-                    <th scope="col">Quarta</th>
-                    <th scope="col">Quinta</th>
-                    <th scope="col">Sexta</th>
-                    <th scope="col">Sábado</th>
-                </tr>
-                </thead>
-                <tbody>
-                        @foreach (ShedulesViewModel subjectShedule in Model.Shedules)
+            <div class="table-responsive">
+                <!-- Projects table -->
+                <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Total de Aulas</th>
+                        <th scope="col">Total de Faltas</th>
+                        <th scope="col">Presença</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (SubjectViewModel subject in Model.Subjects)
                         {
                             <tr>
+                                <th scope="row">
+                                
+                                </th>
                                 <td>
-                                    @subjectShedule.Monday
+                                    @subject.subjectName
                                 </td>
                                 <td>
-                                        @subjectShedule.Tuesday
+                                    @subject.totalClasses
                                 </td>
                                 <td>
-                                        @subjectShedule.Wednesday
+                                    @subject.abstencesCount
                                 </td>
                                 <td>
-                                        @subjectShedule.Thursday
-                                </td>
-                                <td>
-                                        @subjectShedule.Friday
-                                </td>
-                                <td>
-                                        @subjectShedule.Saturday
+                                    <i class="fas fa-arrow-up text-success mr-3"></i> @subject.presencePercent%
                                 </td>
                             </tr>
-                        } 
-                </tbody>
-            </table>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-5 mt-4">
+        <div class="card box-shadow shadow">
+            <div class="card-header border-0 mycardheader-secondary">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="mb-0 text-light">Horários</h3>
+                    </div>
+                    <!--<div class="col text-right">
+                        <a href="#!" class="btn btn-sm btn-primary">Ver mais</a>
+                        </div>-->
+                </div>
+            </div>
+            <div class="table-responsive">
+                <!-- Projects table -->
+                <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Segunda</th>
+                        <th scope="col">Terça</th>
+                        <th scope="col">Quarta</th>
+                        <th scope="col">Quinta</th>
+                        <th scope="col">Sexta</th>
+                        <th scope="col">Sábado</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                            @foreach (ShedulesViewModel subjectShedule in Model.Shedules)
+                            {
+                                <tr>
+                                    <td>
+                                        @subjectShedule.Monday
+                                    </td>
+                                    <td>
+                                            @subjectShedule.Tuesday
+                                    </td>
+                                    <td>
+                                            @subjectShedule.Wednesday
+                                    </td>
+                                    <td>
+                                            @subjectShedule.Thursday
+                                    </td>
+                                    <td>
+                                            @subjectShedule.Friday
+                                    </td>
+                                    <td>
+                                            @subjectShedule.Saturday
+                                    </td>
+                                </tr>
+                            } 
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-12 mt-4">
+        <div class="card box-shadow shadow">
+            <div class="card-header border-0 mycardheader-danger">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="mb-0 text-light">Faltas</h3>
+                    </div>
+                    <!--<div class="col text-right">
+                        <a href="#!" class="btn btn-sm btn-primary">Ver todas</a>
+                        </div>-->
+                </div>
+            </div>
+            <div class="table-responsive">
+                <!-- Projects table -->
+                <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Matéria</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Número de Faltas</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (SubjectViewModel subject in Model.Subjects)
+                        {
+                            <tr>
+                                <th scope="row">
+                                    1
+                                </th>
+                                <td>
+                                    EDA003
+                                </td>
+                                <td>
+                                    07/02/2023
+                                </td>
+                                <td>
+                                    2
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-outline-warning btn-sm">Edit</a>
+                                        <a class="btn btn-outline-danger btn-sm">Delete</a>
+                                    </div>    
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
