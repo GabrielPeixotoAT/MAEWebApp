@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MAEWebApp.Models;
+using MAEWebApp.Models.ViewModels;
 
 namespace MAEWebApp.Controllers;
 
@@ -15,7 +16,24 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        List<SubjectViewModel> subjects = new List<SubjectViewModel>();
+
+        subjects.Add(new SubjectViewModel
+        { 
+            Name = "Padrões de Projetos", 
+            TotalClasses = 90, 
+            TotalAbstences =  2,
+            Percent = 98.15m
+        });
+        subjects.Add(new SubjectViewModel
+        { 
+            Name = "Padrões de Projetos", 
+            TotalClasses = 90, 
+            TotalAbstences =  2,
+            Percent = 98.15m
+        });
+
+        return View(subjects);
     }
 
     public IActionResult Privacy()
