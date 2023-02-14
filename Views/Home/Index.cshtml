@@ -187,25 +187,29 @@
                             <th scope="col">#</th>
                             <th scope="col">Matéria</th>
                             <th scope="col">Data</th>
+                            <th scope="col">Descrição</th>
                             <th scope="col">Número de Faltas</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (SubjectViewModel subject in Model.Subjects)
+                        @foreach (Abstence abstence in Model.Abstences)
                         {
                             <tr>
                                 <th scope="row">
-                                    1
+                                    @abstence.abstenceID
                                 </th>
                                 <td>
-                                    EDA003
+                                    @abstence.subjectIDFK
                                 </td>
                                 <td>
                                     07/02/2023
                                 </td>
                                 <td>
-                                    2
+                                    @abstence.description
+                                </td>
+                                <td>
+                                    @abstence.classCount
                                 </td>
                                 <td>
                                     <div class="btn-group">

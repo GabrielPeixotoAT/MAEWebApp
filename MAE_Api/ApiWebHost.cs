@@ -2,6 +2,6 @@
 {
     public class ApiWebHost
     {
-        public static string Host;
+        public static string Host = "https://maeapi.azurewebsites.net";
     }
 }

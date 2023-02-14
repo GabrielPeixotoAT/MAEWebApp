@@ -21,12 +21,15 @@ public class HomeController : Controller
     {
         SubjectAbstencesService subjectAbstencesService = new SubjectAbstencesService();
         SubjectShedulesService subjectShedulesService = new SubjectShedulesService();
+        AbstenceService abstenceService = new AbstenceService();
 
         HomeModels homeModels = new HomeModels();
         
         homeModels.Subjects = subjectAbstencesService.GetAll() as List<SubjectViewModel>;
 
         homeModels.Shedules = subjectShedulesService.ToSheduleView();
+
+        homeModels.Abstences = abstenceService.GetAll() as List<Abstence>;
 
         return View(homeModels);
     }

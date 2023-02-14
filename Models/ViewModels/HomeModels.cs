@@ -4,5 +4,6 @@
     {
         public List<SubjectViewModel> Subjects { get; set; }
         public List<ShedulesViewModel> Shedules { get; set; }
+        public List<Abstence> Abstences { get; set; }
     }
 }
